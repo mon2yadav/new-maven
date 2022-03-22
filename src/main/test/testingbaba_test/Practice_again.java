@@ -7,10 +7,17 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
 
@@ -39,6 +46,7 @@ public class Practice_again extends Baseliberary {
 		driver.get(url);
 		driver.close();
 		driver.quit();
+		
 		try {
 			TakesScreenshot ts=(TakesScreenshot)driver;
 			File src=ts.getScreenshotAs(OutputType.FILE);
@@ -83,5 +91,38 @@ public class Practice_again extends Baseliberary {
 			System.out.println(" issue in scrollbexpath  "+e);
 		}
 		
+	}
+	public void dynamicwait()
+	{
+		try
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 200);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("")));
+	} 
+		catch (Exception e) {
+		System.out.println("issue in dynamic wait");
+	}
+	
+			
+	}
+	
+	public static void dropdownbyvalue(WebElement ele, String value)
+	{
+		Select sel=new Select(ele);
+		sel.selectByVisibleText(value);
+	}
+	public void moveforward()
+	{
+		driver.navigate().forward();
+	}
+	public void movebackword()
+	{
+		driver.navigate().back();
+	}
+	public void refreshbrowser()
+	{
+		driver.navigate().refresh();                                      // for refresh the browser
+		driver.findElement(By.xpath("")).sendKeys(Keys.F5);                //  for refresh the browser
+		driver.findElement(By.xpath("")).sendKeys(Keys.ENTER);                      // for send data and press enter
 	}
 }
