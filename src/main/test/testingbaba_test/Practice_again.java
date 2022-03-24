@@ -1,6 +1,9 @@
 package testingbaba_test;
 
 import java.io.File;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -119,6 +122,24 @@ public class Practice_again extends Baseliberary {
 		driver.switchTo().frame("{frameindex/frameName/frameId}");
 		
 		
+	}
+	public static String currentdate()
+	{
+		String datetime = null;
+		try 
+		{
+			DateFormat df=new SimpleDateFormat("dd-mm-yyyy  hh:mm");
+			Date dateobj=new Date(12);
+			df.format(dateobj);
+			datetime=df.format(dateobj);
+		 return datetime;
+			
+		} 
+		catch (Exception e) 
+		{
+			System.out.println("issue in get currentdateand time   "+e);
+		}
+		return datetime;
 	}
 	
 	
