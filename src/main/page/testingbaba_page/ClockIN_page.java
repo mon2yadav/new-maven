@@ -1,7 +1,12 @@
 package testingbaba_page;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import applicationutility.Application_utility_my;
 import baseliberary.Baseliberary;
@@ -44,7 +49,7 @@ public ClockIN_page() {
 			
 		}
 		public void clickout() throws Exception  {
-			Thread.sleep(10000);
+	        Thread.sleep(10000);
 			Application_utility_my.clickme(clockout);	
 		}
 		

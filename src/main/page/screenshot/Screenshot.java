@@ -1,6 +1,7 @@
 package screenshot;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Driver;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,6 +15,7 @@ public class Screenshot extends Baseliberary {
 		{
 			try
 			{
+				
 				TakesScreenshot ts=(TakesScreenshot)driver; // type casting
 				  File src=ts.getScreenshotAs(OutputType.FILE);
 				  String screenshotName = null;
