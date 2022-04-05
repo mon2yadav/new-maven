@@ -549,7 +549,7 @@ public class Application_utility_all extends Baseliberary {
 			{
 				DateFormat df = new SimpleDateFormat("MM-dd-yyyy ");
 				Date dateobj = new Date();
-//				df.format(dateobj);
+				df.format(dateobj);
 				datetime = df.format(dateobj);
 				return datetime;
 			} 
@@ -566,7 +566,7 @@ public class Application_utility_all extends Baseliberary {
 			{
 				DateFormat df = new SimpleDateFormat("mm-dd-yyyy hh:mm");
 				Date dateobj = new Date();
-//				df.format(dateobj);
+				df.format(dateobj);
 				datetime = df.format(dateobj);
 				return datetime;
 			} 

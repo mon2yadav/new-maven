@@ -16,7 +16,7 @@ public class Brokenlink {
 
 				WebDriverManager.chromedriver().setup();
 				WebDriver driver = new ChromeDriver();
-				driver.get("https://testingbaba.com/");
+				driver.get("https://www.cryptoknowmics.com/");
 	            driver.manage().window().maximize();
 	            List<WebElement> counts = driver.findElements(By.tagName("a"));
 				System.out.println("No. of links are " + counts.size());
@@ -27,7 +27,7 @@ public class Brokenlink {
 					checkBrokenLink(url);
 				}
 
-				// urlList.parallelStream().forEach((e -> checkBrokenLink(e));
+//				 urlList.parallelStream().forEach((e -> checkBrokenLink(e));
 				driver.quit();
 			}
 	    public static void checkBrokenLink(String urlList) {
@@ -43,7 +43,7 @@ public class Brokenlink {
 						System.out.println(urlList + " ---> " + httpcon.getResponseMessage() + " Not Broken Link");
 					}
 				} catch (Exception e) {
-
+                  System.out.println("All steps done");
 				}
 
 			}
