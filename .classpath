@@ -39,5 +39,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Program Files/jar_files"/>
+	<classpathentry kind="lib" path="C:/Users/Agio13/Downloads/jar_files"/>
+	<classpathentry kind="lib" path="C:/jar_files"/>
+	<classpathentry kind="lib" path="C:/Users/Agio13/Downloads/jar_files (1)"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
