@@ -33,7 +33,7 @@ public class Extendreport_utility {
 			extent.createTest("launchreports");
 			WebDriverManager.chromedriver().setup();
 			WebDriver driver = new ChromeDriver();
-			driver.get("https://rahulshettyacademy.com/#/index");
+			driver.get("https://cryptoknowmics.com");
 			System.out.println(driver.getTitle());
 			extent.flush();
 		}
