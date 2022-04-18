@@ -114,7 +114,7 @@ public class Practice_again extends Baseliberary {
 		return datetime;
 	}
 	
-	public static String propertyutility() {
+	public static String propertyutility(String key) {
 		String path="";
 		String value="";
 		try {
@@ -122,7 +122,7 @@ public class Practice_again extends Baseliberary {
 			FileInputStream fis=new FileInputStream(path);
 			Properties prop=new Properties();
 			prop.load(fis);
-			value=prop.getProperty(value);
+			value=prop.getProperty(key).trim();
 			} catch (Exception e) {
 			System.out.println("Issue in get read data");
 		}
@@ -138,6 +138,7 @@ public class Practice_again extends Baseliberary {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			List<WebElement> counts=driver.findElements(By.tagName("a"));
+			System.out.println("No. of links "+counts.size());
 			ArrayList<String> urlList=new ArrayList<String>();
 			for(WebElement e:counts)
 			{
