@@ -51,7 +51,7 @@ public class Application_utility_all extends Baseliberary {
 			} 
 			catch (Exception e) 
 			{
-				System.out.println("Issue in drop down value selection");
+				System.out.println("Issue in drop down value selection"+e);
 				e.printStackTrace();
 			}
 		}
@@ -652,7 +652,7 @@ public class Application_utility_all extends Baseliberary {
 				}
 				return randomNumber;
 			}
-
+ 
 			catch (Exception e) 
 			{
 				System.out.println("issue in Random number" + e);
