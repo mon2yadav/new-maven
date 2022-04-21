@@ -63,15 +63,10 @@ public class Abhyas_javaProgram extends Baseliberary {
 	public void doubleclick(WebElement ele) {
 		Actions act=new Actions(driver);
 		act.doubleClick().perform();
-		
-		Actions act1=new Actions(driver);
-		act1.contextClick().perform();
-		
-		Actions act2=new Actions(driver);
-		act2.moveToElement(ele).build().perform();
-		
-		act2.dragAndDrop(ele, ele);
-	}
+		act.contextClick().perform();
+		act.moveToElement(ele).build().perform();
+		act.dragAndDrop(ele, ele);
+		}
 	
 	public void somedrivermethod() {
 		driver.findElement(By.xpath("")).clear();

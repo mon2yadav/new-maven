@@ -632,7 +632,7 @@ public class Application_utility_all extends Baseliberary {
 			{
 
 				WebElement el = Baseliberary.driver.findElement(ByLocator(locator));
-				el.sendKeys(text);
+	 			el.sendKeys(text);
 			} 
 			catch (Exception e)
 			{
