@@ -150,7 +150,7 @@ public class Abhyas_progrm2 extends Baseliberary {
 
 	public void dropdownbyvalue(WebElement ele, String value) {
 		Select sel = new Select(ele);
-		sel.selectByVisibleText(value);
+		sel.selectByVisibleText(value); 
 	}
 
 	public void dynamicwait() {
