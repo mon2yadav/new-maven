@@ -40,7 +40,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Abhyas11 extends Baseliberary{
 	
-	public void takescreenshot() {
+	public void takescreenshot()
+	{
 		try {
 			TakesScreenshot ts=(TakesScreenshot)driver;
 			File src=ts.getScreenshotAs(OutputType.FILE);
@@ -53,27 +54,29 @@ public class Abhyas11 extends Baseliberary{
 		}
 	}
 	
-	public void driverlounch() {
-		System.setProperty("webdriver.chrome.driver","");
+	public void driverlounch(String ulr)
+	{
+		System.setProperty("webdriver.chrome.driver", "");
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		driver.get("https://www.medgrids.com");
+		driver.get(ulr);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 	}
 	
 	public void doubleclick()
 	{
 		Actions act=new Actions(driver);
 		act.doubleClick().perform();
-		act.contextClick().perform();    // right click
+		act.contextClick().perform();
 		act.moveToElement(null, 0, 0);
 		act.dragAndDropBy(null, 0, 0).build().perform();
 	}
 	
 	public void somedrivermethod() {
-		driver.findElement(By.xpath("")).click();
 		driver.findElement(By.xpath("")).clear();
+		driver.findElement(By.xpath("")).click();
 		driver.findElement(By.xpath("")).sendKeys("montu");
 		driver.findElement(By.xpath("")).sendKeys(Keys.ENTER);
 		driver.findElement(By.xpath("")).sendKeys(Keys.F5);
@@ -85,10 +88,13 @@ public class Abhyas11 extends Baseliberary{
 		driver.switchTo().alert().getText();
 		driver.switchTo().frame("{frameName/frameId/frameIndex}");
 		driver.switchTo().defaultContent();
-		
-	}
+		driver.getTitle();
+		driver.getClass();
+		driver.get("");
+		}
 	
-	public void changewindow(int tabindex) {
+	public void changewindow(int tabindex)
+	{
 		Set<String> tab = driver.getWindowHandles();
 		ArrayList<String> tabs=new ArrayList<String>(tab);
 		driver.switchTo().window(tabs.get(tabindex));
@@ -103,34 +109,35 @@ public class Abhyas11 extends Baseliberary{
 	{
 		Select sel=new Select(ele);
 		sel.selectByVisibleText(value);
-		
 	}
 	
-	public void getcurrentdate() {
+	public String getcurrentdateandtime()
+	{
 		String datetime=null;
 		try {
 			DateFormat df=new SimpleDateFormat("dd-mm-yyyy  hh:mm");
 			Date dateobj=new Date(11);
 			df.format(dateobj);
 			datetime=df.format(dateobj);
-			
 		} catch (Exception e) {
-			System.out.println("Issue in getcurrent date and time  "+e);
+			System.out.println("Issue in get current date and time  "+e);
 		}
-		
-		
+		return datetime;
 	}
-	public void scrollbyxapth() {
+	
+	public void scrollbyxapth()
+	{
 		try {
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
-			jse.executeScript(" ",By.xpath(""));
+			jse.executeScript("",By.xpath(""));
 			
 		} catch (Exception e) {
-			System.out.println("Issue in scroll by xpath   "+e);
+			System.out.println("issue in scroll by xpath  "+e);
 		}
 	}
 	
-	public static String  propertyutility(String key) {
+	public String propertyutility(String key)
+	{
 		String path="";
 		String value="";
 		try {
@@ -140,12 +147,12 @@ public class Abhyas11 extends Baseliberary{
 			value=prop.getProperty(key).trim();
 			
 		} catch (Exception e) {
-			System.out.println(" Issue in get read data from propertyutility   "+e);
+			System.out.println("Issue in get read data from property utility  "+e);
 		}
 		return value;
 	}
 	
-	public void checkbrokenlink()
+	public static void brokenlink()
 	{
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
@@ -153,7 +160,7 @@ public class Abhyas11 extends Baseliberary{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		List<WebElement> counts = driver.findElements(By.tagName("a"));
-		System.out.println("Number of links "+counts.size());
+		System.out.println("Number of Links "+counts.size());
 		ArrayList<String> urlList=new ArrayList<String>();
 		for(WebElement e:counts)
 		{
@@ -162,9 +169,10 @@ public class Abhyas11 extends Baseliberary{
 			checkBrokenLink(url);
 		}
 		driver.quit();
+		
 	}
 
-	private void checkBrokenLink(String urlList) {
+	private static void checkBrokenLink(String urlList) {
 		try {
 			URL urls=new URL(urlList);
 			HttpURLConnection httpcon=(HttpURLConnection)urls.openConnection();
@@ -180,20 +188,19 @@ public class Abhyas11 extends Baseliberary{
 			}
 			
 			
-			
 		} catch (Exception e) {
-			System.out.println("Issue in check broken link  "+e);
+			System.out.println("issue in check broken link  "+e);
 		}
 		
 	}
 	
-	public int randomnumber() {
+	public int  getrandomnumber() {
 		int randomNumber=0;
 		try {
 			Random objgenerator=new Random();
 			for(int i=0; i<=10; i++)
 			{
-				randomNumber=objgenerator.nextInt();
+				randomNumber=objgenerator.nextInt(1000);
 			}
 			
 		} catch (Exception e) {
@@ -202,9 +209,7 @@ public class Abhyas11 extends Baseliberary{
 		return randomNumber;
 	}
 	
-	
-	public void uploadfilewithrobot(String imagepath)
-	{
+	public void uploadfilewithrobot(String imagepath) {
 		StringSelection stringSelection=new StringSelection(imagepath);
 		Clipboard clipboard=Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(stringSelection, null);
@@ -213,12 +218,13 @@ public class Abhyas11 extends Baseliberary{
 			robot=new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-             robot.delay(100);			
+			robot.delay(100);
 		} catch (Exception e) {
 			System.out.println("Issue in upload file with robot class  "+e);
 		}
 		
 	}
+	
 	public String excelutility(int rownum, int columnum) {
 		String path="";
 		String value="";
@@ -226,27 +232,28 @@ public class Abhyas11 extends Baseliberary{
 			FileInputStream fis=new FileInputStream(path);
 			XSSFWorkbook wb=new XSSFWorkbook();
 			XSSFSheet sheet=wb.getSheetAt(0);
-			sheet.getRow(rownum).getCell(columnum).getStringCellValue();
+			value=sheet.getRow(rownum).getCell(columnum).getStringCellValue();
 			
 		} catch (Exception e) {
-			System.out.println("Issue in get read data from excell  "+e); 
+			System.out.println("Issue in get read data from excell utility  "+e);
 		}
 		return value;
-		
-	}  
-	public int lastrowcount() {
+	}
+	
+	public int rowcount()
+	{
 		String path="";
-		int rowcount=0;
+		int lastrowcount=0;
 		try {
 			FileInputStream fis=new FileInputStream(path);
 			XSSFWorkbook wb=new XSSFWorkbook();
 			XSSFSheet sheet=wb.getSheetAt(0);
-			sheet.getLastRowNum();
+			lastrowcount=sheet.getLastRowNum();
 			
 		} catch (Exception e) {
-			System.out.println("issue in get last rowcount "+e );
+			System.out.println("Issue in get last row count  "+e);
 		}
-		return rowcount;
+		return lastrowcount;
 	}
-	
 }
+

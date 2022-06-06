@@ -64,7 +64,7 @@ public class Abhyas_javaProgram extends Baseliberary {
 		act.doubleClick().perform();
 		act.contextClick().perform();
 		act.moveToElement(null, 0, 0);
-		act.dragAndDrop(null, null);
+		act.dragAndDrop(null, null).build().perform();;
 		}
 	public void drivermethod() {
 		driver.findElement(By.xpath("")).click();
@@ -81,6 +81,10 @@ public class Abhyas_javaProgram extends Baseliberary {
 		driver.switchTo().alert().getClass();
 		driver.switchTo().frame("{frameName/frameId/frameIndex}");
 		driver.switchTo().defaultContent();
+		driver.getTitle();
+		driver.get("https://www.blokchi.com");
+		driver.close();
+		driver.quit();
 	}
 
 	public void changewindow(int Tabindex) {
