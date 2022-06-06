@@ -45,7 +45,7 @@ public class Brokenlink_practice extends Baseliberary {
 			}
 			else
 			{
-				System.out.println(urlList + httpcon.getResponseMessage()+ " This link in not Broken" );
+				System.out.println(urlList + httpcon.getResponseMessage()+ " This link iS not Broken" );
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

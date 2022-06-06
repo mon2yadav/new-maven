@@ -3,7 +3,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,7 +26,7 @@ public class Brokenlink {
 					checkBrokenLink(url);
 				}
 
-//				 urlList.parallelStream().forEach((e -> checkBrokenLink(e));
+//				 urlList.parallelStream().forEach((e -> checkBrokenLink(e)));
 				driver.quit();
 			}
 	    public static void checkBrokenLink(String urlList) {
@@ -37,19 +36,36 @@ public class Brokenlink {
 					httpcon.setConnectTimeout(5000);
 					httpcon.connect();
 
-					if (httpcon.getResponseCode() >= 400) {
-						System.out.println(urlList + " ---> " + httpcon.getResponseMessage() + " Is Broken Link");
-					} else {
-						System.out.println(urlList + " ---> " + httpcon.getResponseMessage() + " Not Broken Link");
+					if (httpcon.getResponseCode() >= 100 && httpcon.getResponseCode()<=199) 
+					{
+						System.out.println(urlList + " ---> " + httpcon.getResponseMessage() + " This link is  Broken with informational error responses ");
+					} 
+					else if(httpcon.getResponseCode()>=300 && httpcon.getResponseCode()<=399)
+					{
+						System.out.println(urlList + "  ----> " + httpcon.getResponseMessage()+ " This link is broken with Redirection responses");
+						
+					}
+					else if(httpcon.getResponseCode()>=400 && httpcon.getResponseCode()<=499)
+					{
+						System.out.println(urlList + " ----> " + httpcon.getResponseMessage()+ " This link is broken with client error responses ");
+					}
+					else if(httpcon.getResponseCode()>=500 && httpcon.getResponseCode()<=599)
+					{
+						System.out.println(urlList + " ----> " + httpcon.getResponseMessage()+ " This link is broken with server error responses  ");
+					}
+					
+				    else 
+				    {
+						System.out.println(urlList + " ---> " + httpcon.getResponseMessage() + " Link is NOT BROKEN ");
 					}
 				} catch (Exception e) {
-                  System.out.println("All steps done");
+                  System.out.println("Issue  in check broken link   " + e);
 				}
 
 			}
-
-		}
-
+}
+	    
+	   
 
 
 
