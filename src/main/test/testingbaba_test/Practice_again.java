@@ -1,17 +1,23 @@
 package testingbaba_test;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -30,45 +36,41 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Practice_again extends Baseliberary {
 
-	public void takescreenshot()
-	{
+	public void getscreenshot() {
 		try {
-			TakesScreenshot ts=(TakesScreenshot)driver;
-			File src=ts.getScreenshotAs(OutputType.FILE);
-			String screenshotName=null;
-			File dest=new File(screenshotName);
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			File src = ts.getScreenshotAs(OutputType.FILE);
+			String screenshotName = null;
+			File dest = new File("./screenshot" + screenshotName + "./png");
 			Files.copy(src, dest);
+
 		} catch (Exception e) {
-			System.out.println("Issue in take screenshot");
+			System.out.println("Issue in take screenshot  " + e);
 		}
 	}
-	
-	public void getlounchdriver(String url)
-	{
-		System.setProperty("webdriver.chrome.driver","");
+
+	public void driverlounch(String url) {
+		System.setProperty("webdriver.chrome.driver", "");
 		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get(url);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
-		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	public void doubleclick(WebElement ele)
-	{
-		Actions act=new Actions(driver);
+
+	public void clickmethod() {
+		Actions act = new Actions(driver);
 		act.doubleClick().perform();
-		
-		Actions act1=new Actions(driver);
-		act1.contextClick().perform();
-		
-		Actions act2=new Actions(driver);
-		act2.moveToElement(ele);
+		act.contextClick().perform();
+		act.moveToElement(null, 0, 0);
+		act.dragAndDrop(null, null).build().perform();
+
 	}
-	
-	public void somedrivermehtod() {
+
+	public void somedrivermethod() {
 		driver.findElement(By.xpath("")).click();
 		driver.findElement(By.xpath("")).clear();
-		driver.findElement(By.xpath("")).sendKeys("Montu");
+		driver.findElement(By.xpath("")).sendKeys("montu");
 		driver.findElement(By.xpath("")).sendKeys(Keys.ENTER);
 		driver.findElement(By.xpath("")).sendKeys(Keys.F5);
 		driver.navigate().refresh();
@@ -77,104 +79,154 @@ public class Practice_again extends Baseliberary {
 		driver.switchTo().alert().accept();
 		driver.switchTo().alert().dismiss();
 		driver.switchTo().alert().getText();
-		driver.switchTo().frame("{frameIndex/frameName/frameId}");
+		driver.switchTo().frame("{frameName/frameId/frameIndex}");
 		driver.switchTo().defaultContent();
-		
-		
+		driver.getTitle();
+		driver.get("https://www.blokchi.com");
+		driver.close();
+		driver.quit();
 	}
-	
+
 	public void changewindow(int tabindex) {
-		Set<String> tab=driver.getWindowHandles();
-		ArrayList<String> tabs=new ArrayList<String>(tab);
+		Set<String> tab = driver.getWindowHandles();
+		ArrayList<String> tabs = new ArrayList<String>();
 		driver.switchTo().window(tabs.get(tabindex));
 	}
-	
+
 	public void dynamicwait() {
-		WebDriverWait wait=new WebDriverWait(driver, 100);
+		WebDriverWait wait = new WebDriverWait(driver, 100);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("")));
-		
-		
 	}
-	
-	public void dropdownbyvalue(WebElement ele, String value)
-	{
-		Select sel=new Select(ele);
+
+	public void dropdownbyvalue(WebElement ele, String value) {
+		Select sel = new Select(ele);
 		sel.selectByVisibleText(value);
+		sel.selectByIndex(0);
+		sel.selectByValue(value);
 	}
-	public String getcurrentdate() {
-		String datetime=null;
+
+	public String propertyutility(String key) {
+		String path = "";
+		String value = "";
 		try {
-			DateFormat df=new SimpleDateFormat("dd-mm-yyyy  hh:mm");
-			Date dateobj=new Date(11);
-			df.format(dateobj);
-			datetime=df.format(dateobj);
-		   } catch (Exception e) {
-			System.out.println("Issue in get currentdateand time");
-		}
-		return datetime;
-	}
-	
-	public static String propertyutility(String key) {
-		String path="";
-		String value="";
-		try {
-			
-			FileInputStream fis=new FileInputStream(path);
-			Properties prop=new Properties();
+			FileInputStream fis = new FileInputStream(path);
+			Properties prop = new Properties();
 			prop.load(fis);
-			value=prop.getProperty(key).trim();
-			} catch (Exception e) {
-			System.out.println("Issue in get read data");
+			value = prop.getProperty(key).trim();
+
+		} catch (Exception e) {
+			System.out.println("Issue in get read data from configure file  " + e);
 		}
 		return value;
-		
 	}
-	
-	public void checkbrokenlink() throws Exception {
-		 {
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
-			driver.get("https://www.cryptoknowmics.com");
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			List<WebElement> counts=driver.findElements(By.tagName("a"));
-			System.out.println("No. of links "+counts.size());
-			ArrayList<String> urlList=new ArrayList<String>();
-			for(WebElement e:counts)
-			{
-				String url=e.getAttribute("href");
-				System.out.println(urlList.add(url));
-				checkBrokenLink(url);
-				
-			}
-			
-			driver.quit();
-		 }
-		
-	}
-		
 
-	private void checkBrokenLink(String urlList) throws Exception {
+	public void brokenlink() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://www.cryptoknowmics.com");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		List<WebElement> counts = driver.findElements(By.tagName("a"));
+		System.out.println("number of links " + counts.size());
+		ArrayList<String> urlList = new ArrayList<String>();
+		for (WebElement e : counts) {
+			String url = e.getAttribute("href");
+			System.out.println(urlList.add(url));
+			checkBrokenLink(url);
+
+		}
+		driver.quit();
+	}
+
+	private void checkBrokenLink(String urlList) {
 		try {
-			URL urls=new URL(urlList);
-			HttpURLConnection httpcon=(HttpURLConnection)urls.openConnection();
-			httpcon.setConnectTimeout(5000);
+			URL urls = new URL(urlList);
+			HttpURLConnection httpcon = (HttpURLConnection) urls.openConnection();
+			httpcon.setConnectTimeout(1000);
 			httpcon.connect();
-			if(httpcon.getResponseCode()>=400)
-			{
-				System.out.println("urlList"+httpcon.getResponseMessage()+   " This link is broken ");
+			if (httpcon.getResponseCode() >= 100 && httpcon.getResponseCode() <= 199) {
+				System.out.println(urlList + "----> " + httpcon.getResponseMessage()
+						+ " This link is broken with informational responses");
+			} else if (httpcon.getResponseCode() >= 300 && httpcon.getResponseCode() <= 399) {
+				System.out.println(urlList + "----> " + httpcon.getResponseMessage()
+						+ " This link is broken with redirectional responses");
 			}
-			else
-			{
-				System.out.println("urlList"+httpcon.getResponseMessage()  +  " This link is not broken"); {
-					
-				}
+
+			else if (httpcon.getResponseCode() >= 400 && httpcon.getResponseCode() <= 499) {
+				System.out.println(urlList + "-----> " + httpcon.getResponseMessage()
+						+ "This link is broken with client error responses");
+			}
+
+			else if (httpcon.getResponseCode() >= 500 && httpcon.getResponseCode() <= 599) {
+				System.out.println(urlList + "----> " + httpcon.getResponseMessage()
+						+ "This link is broken with internal server error responses");
+			} else {
+				System.out.println(urlList + "----> " + httpcon.getResponseMessage() + "This link is NOT BROKEN");
 			}
 		} catch (Exception e) {
-			System.out.println("Issue in check broken link");
+			System.out.println("Issue in check broken link  " + e);
 		}
-		
-		
+
 	}
-	
+
+	public int randomnumber() {
+		int randomNumber = 0;
+		try {
+			Random objgenerator = new Random();
+			for (int i = 0; i <= 10; i++) {
+				randomNumber = objgenerator.nextInt(1000);
+			}
+
+		} catch (Exception e) {
+			System.out.println("Issue in get random Number  " + e);
+		}
+		return randomNumber;
+	}
+
+	public void uploadfilewithrobotclass(String imagepath) {
+		StringSelection stringSelection = new StringSelection(imagepath);
+		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		clipboard.setContents(stringSelection, null);
+		Robot robot = null;
+		try {
+			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.delay(100);
+		} catch (Exception e) {
+			System.out.println("Issue in upload file with robot class");
+		}
+		robot.delay(150);
+	}
+
+	public String excelutility(int rownum, int columnum) {
+		String path = "";
+		String value = "";
+		try {
+			FileInputStream fis = new FileInputStream(path);
+			XSSFWorkbook wb = new XSSFWorkbook();
+			XSSFSheet sheet = wb.getSheetAt(0);
+			value = sheet.getRow(rownum).getCell(columnum).getStringCellValue();
+
+		} catch (Exception e) {
+			System.out.println("Issue in get read data from excel utility " + e);
+		}
+		return value;
+
+	}  
+
+	public int rowcount() {
+		int lastrowcount = 0;
+		String path = "";
+		try {
+			FileInputStream fis = new FileInputStream(path);
+			XSSFWorkbook wb = new XSSFWorkbook();
+			XSSFSheet sheet = wb.getSheetAt(0);
+			lastrowcount = sheet.getLastRowNum();
+		} catch (Exception e) {
+			System.out.println("Issue in get last rownumber  " + e);
+		}
+		return lastrowcount;
+	}
+
 }
