@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import baseliberary.Baseliberary;
 import testingbaba_page.Testingbaba_Progressbar_page;
-public class Testinbaba_progessbar_test extends Baseliberary {
+public class Testingbaba_Progressbar_test extends Baseliberary {
 Testingbaba_Progressbar_page ob;
 	@BeforeTest
 	public void getlounchurl() {

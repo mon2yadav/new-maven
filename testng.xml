@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Testingbaba_Regression">
-  <test  name="loginTest" enabled="false">
+  <test  name="loginTest" enabled="true">
   <classes>
-  <class name="testingbaba_test.Testingbaba_loginTest"/>
+  <class name="testingbaba_test.Testingbaba_Login_test"></class>
   </classes>
   </test>  <!-- Test -->
-  <test name="Textbox" enabled="false">
+  <test name="Textbox" enabled="true">
   <classes>
-  <class name="testingbaba_test.Testingbaba_Textbox_test"/>
+  <class name="testingbaba_test.Testingbaba_Textbox_test"></class>
   </classes>
   </test> <!-- Test -->
-  <test name="Checkbox" enabled="false">
+  <test name="Checkbox" enabled="true">
   <classes >
-  <class name="testingbaba_test.Testingbaba_Checkbox_test"/>
+  <class name="testingbaba_test.Testingbaba_Checkbox_test"></class>
   </classes>
  </test> <!-- Test -->
- <test name=" Webtable" enabled="false">
+ <test name=" Webtable" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Webtable_test"></class>
  </classes>
  </test> <!-- Test -->
- <test name="Button" enabled="false">
+ <test name="Button" enabled="true">
  <classes>
  <class  name="testingbaba_test.Testingbaba_button_test"></class>
  </classes>
  </test> <!-- Test -->
- <test name="Links" enabled="false">
+ <test name="Links" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Link_test"></class>
  </classes>
  </test> <!-- Test -->
- <test name="Selectmenu" enabled="false">
+ <test name="Selectmenu" enabled="true">
  <classes>
- <class name="testingbaba_test.Testingbaba_Selectmenu_test"></class>
+ <class name="testingbaba_test.Testingbab_Selectmenu_test"></class>
  </classes>
   </test> <!-- Test -->
-  <test name="fileupload" enabled="false">
+  <test name="fileupload" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Uploadfile_test"></class>
  </classes>
   </test> <!-- Test -->
-   <test name="Alertframe" enabled="false">
+   <test name="Alertframe" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Alertframe_test"></class>
  </classes>
   </test> <!-- Test -->
-   <test name="Dynamicprop" enabled="false">
+   <test name="Dynamicprop" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Dynamicprop_test"></class>
  </classes>
   </test> <!-- Test -->
-     <test name="Datepicker" enabled="false">
+     <test name="Datepicker" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Datepicker_test"></class>
  </classes>
   </test> <!-- Test -->
   
-       <test name="progressbar" enabled="false">
+       <test name="progressbar" enabled="true">
  <classes>
- <class name="testingbaba_test.Testingbaba_progressbar_test"></class>
+ <class name="testingbaba_test.Testingbaba_Progressbar_test"></class>
  </classes>
   </test> <!-- Test -->
-  <test name="tooltip" enabled="false">
+  <test name="tooltip" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Tool_Tip_test"></class>
  </classes>
   </test> <!-- Test -->
-  <test name="Sortable" enabled="false">
+  <test name="Sortable" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Sortable_test"></class>
  </classes>
   </test> <!-- Test -->
-      <test name="Selectable" enabled="false">
+      <test name="Selectable" enabled="true">
  <classes>
  <class name="testingbaba_test.Testingbaba_Selectable_test"></class>
  </classes>
