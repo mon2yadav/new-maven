@@ -39,37 +39,38 @@ import com.google.common.io.Files;
 
 import baseliberary.Baseliberary;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.reactivex.rxjava3.functions.Action;
 
 public class Abhyas_progrm2 extends Baseliberary {
-
+	
 	public void takescreenshot() {
 		try {
-		TakesScreenshot ts=(TakesScreenshot)driver;
-		File src=ts.getScreenshotAs(OutputType.FILE);
-		String screenshotName=null;
-		File dest=new File("./screenshot"+screenshotName+"./png");
-		Files.copy(src, dest);
+			TakesScreenshot ts=(TakesScreenshot)driver;
+			File src=ts.getScreenshotAs(OutputType.FILE);
+			String screenshotName=null;
+			File dest=new File("./screenshot"+screenshotName+"./png");
+			Files.copy(src, dest);
+			
+			
+		} catch (Exception e) {
+			System.out.println("Issue in take screenshot "+e);
 		}
-     catch(Exception e) {
-    	 System.out.println("Issue in take screenshot "+e);
-     }
-		
 	}
 	
 	public void driverlounch(String url) {
-		System.setProperty("webdriver.chrome.drivre", "");
+		System.setProperty("webdriver.chrome.driver", "");
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		driver.get("https://www.blokchi.com");
+		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		
 		WebDriverManager.iedriver().setup();
 		driver=new InternetExplorerDriver();
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
 		
 		WebDriverManager.firefoxdriver().setup();
 		driver=new FirefoxDriver();
@@ -79,7 +80,6 @@ public class Abhyas_progrm2 extends Baseliberary {
 	}
 	
 	public void clickmethod() {
-		
 		Actions act=new Actions(driver);
 		act.doubleClick().perform();
 		act.contextClick().perform();
@@ -87,19 +87,20 @@ public class Abhyas_progrm2 extends Baseliberary {
 		act.dragAndDropBy(null, 0, 0).build().perform();
 	}
 	
+	
 	public void drivermethod(String url) {
-		driver.findElement(By.xpath("")).click();
 		driver.findElement(By.xpath("")).clear();
+		driver.findElement(By.xpath("")).click();
 		driver.findElement(By.xpath("")).sendKeys("montu");
 		driver.findElement(By.xpath("")).sendKeys(Keys.ENTER);
 		driver.findElement(By.xpath("")).sendKeys(Keys.F5);
 		driver.navigate().refresh();
 		driver.navigate().forward();
 		driver.navigate().back();
-		driver.switchTo().frame("{frameName/frameId/frameindex}");
 		driver.switchTo().alert().accept();
 		driver.switchTo().alert().dismiss();
 		driver.switchTo().alert().getText();
+		driver.switchTo().frame("{frameName/frameId/frameIndex}");
 		driver.switchTo().defaultContent();
 		driver.getTitle();
 		driver.get(url);
@@ -118,25 +119,23 @@ public class Abhyas_progrm2 extends Baseliberary {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("")));
 	}
 	
-	public void dropdownbyvalue(WebElement ele, String value) {
+	public void dropbyvalue(WebElement ele, String value) {
 		Select sel=new Select(ele);
 		sel.selectByVisibleText(value);
 		sel.selectByIndex(0);
 		sel.selectByValue(value);
 		sel.deselectAll();
-		sel.deselectByIndex(0);
 	}
-	
 	
 	public String getcurrentdateandtime() {
 		String datetime=null;
 		try {
-			DateFormat df=new SimpleDateFormat("dd-mm-yyyy   hh:mm");
-			Date dateobj=new Date(11);
+			DateFormat df=new SimpleDateFormat("dd-mm-yyyy  hh:mm");
+			Date dateobj=new Date();
 			df.format(dateobj);
 			datetime=df.format(dateobj);
-		}
-		catch(Exception e) {
+			
+		} catch (Exception e) {
 			System.out.println("Issue in get current date and time  "+e);
 		}
 		return datetime;
@@ -146,23 +145,23 @@ public class Abhyas_progrm2 extends Baseliberary {
 		try {
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("", By.xpath(""));
-		}
-		catch(Exception e) {
-			System.out.println("Issue in scroll by xpath  "+e);
+			
+		} catch (Exception e) {
+			System.out.println("Issue in scrol by xpath "+e);
 		}
 	}
 	
 	public String propertyutility(String key) {
 		String path="";
 		String value="";
-		try {
-			FileInputStream fis=new FileInputStream(path);
-			Properties prop=new Properties();
-			prop.load(fis);
-			value=prop.getProperty(key).trim();
-		}
-		catch(Exception e) {
-			System.out.println("Issue in get read data from property utility  "+e);
+		  try {
+			  FileInputStream fis=new FileInputStream(path);
+			  Properties prop=new Properties();
+			  prop.load(fis);
+			  value=prop.getProperty(key).trim();
+			
+		} catch (Exception e) {
+			System.out.println("Issue in get read data from property utility "+e);
 		}
 		return value;
 	}
@@ -174,14 +173,14 @@ public class Abhyas_progrm2 extends Baseliberary {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		List<WebElement> counts = driver.findElements(By.tagName("a"));
-		System.out.println("Number of links "+counts.size());
-		ArrayList<String> urlList=new ArrayList<String>();
-		for(WebElement e:counts) {
-			String url = e.getAttribute("href");
-			System.out.println(urlList.add(url));
-			checkBrokenLink(url);
-		}
-		driver.quit();
+	    System.out.println("Number of links "+counts.size());
+	    ArrayList<String> urlList=new ArrayList<String>();
+	    for(WebElement e:counts) {
+	    	String url = e.getAttribute("href");
+	    	System.out.println(urlList.add(url));
+	    	checkBrokenLink(url);
+	    }
+	    driver.quit();
 	}
 
 	private void checkBrokenLink(String urlList) {
@@ -191,13 +190,13 @@ public class Abhyas_progrm2 extends Baseliberary {
 			httpcon.setConnectTimeout(1000);
 			httpcon.connect();
 			if(httpcon.getResponseCode()>=100 && httpcon.getResponseCode()<200) {
-				System.out.println(urlList +"---->"+httpcon.getResponseMessage()+"This link is broken with informational error");
+				System.out.println(urlList+"----->"+httpcon.getResponseMessage()+"This link is broken with informational error");
 			}
 			else if(httpcon.getResponseCode()>=300 && httpcon.getResponseCode()<400) {
-				System.out.println(urlList +"----->"+httpcon.getResponseMessage()+"This link is broken with redirection error");
+				System.out.println(urlList+"---->"+httpcon.getResponseMessage()+"This link is broken with Redirection error");
 			}
 			else if(httpcon.getResponseCode()>=400 && httpcon.getResponseCode()<500) {
-				System.out.println(urlList+"---->"+httpcon.getResponseMessage()+"This link is broken with client error ");
+				System.out.println(urlList+"----->"+httpcon.getResponseMessage()+"This link is broken with client error ");
 			}
 			else if(httpcon.getResponseCode()>=500 && httpcon.getResponseCode()<600) {
 				System.out.println(urlList+"----->"+httpcon.getResponseMessage()+"This link is broken with internal server error");
@@ -205,29 +204,27 @@ public class Abhyas_progrm2 extends Baseliberary {
 			else {
 				System.out.println(urlList+"---->"+httpcon.getResponseMessage()+"This link is NOT BROKEN");
 			}
+		} catch (Exception e) {
+			System.out.println("Issue in check brokenlink "+e);
 		}
-			catch(Exception e) {
-				System.out.println("Issue in check broken link  "+e);
-				
-			}
+		
 		}
 	
-	public int getrandomnumber() {
+	public int randomnumber() {
 		int randomNumber=0;
-		try {
-		Random objgenerator=new Random();
-		for(int i=0; i<=10; i++) {
-			randomNumber=objgenerator.nextInt(1000);
-		}
-		}
-		catch(Exception e) {
-			System.out.println("Issue in get random number "+e);
-		}
+		 try {
+			 Random objgenerator=new Random();
+			 for(int i=0; i<=10; i++) {
+				 randomNumber=objgenerator.nextInt();
+			 }
+		 }
+		 catch(Exception e) {
+			 System.out.println("Issue in get random number "+e);
+		 }
 		return randomNumber;
-		
 	}
 	
-	public void uploadfilewithrobotclass(String imagepath) {
+	public void uploadfilewithrorbotclass(String imagepath) {
 		StringSelection stringSelection=new StringSelection(imagepath);
 		Clipboard clipboard=Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(stringSelection, null);
@@ -237,43 +234,42 @@ public class Abhyas_progrm2 extends Baseliberary {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			robot.delay(100);
-		}
-		catch(Exception e) {
+			
+		} catch (Exception e) {
 			System.out.println("Issue in upload file with robot class "+e);
 		}
-		robot.delay(150);
 	}
 	
 	public String excelutility(int rownum, int columnum) {
 		String path="";
 		String value="";
-		try {
+		  try {
 			FileInputStream fis=new FileInputStream(path);
 			XSSFWorkbook wb=new XSSFWorkbook();
 			XSSFSheet sheet=wb.getSheetAt(0);
 			value=sheet.getRow(rownum).getCell(columnum).getStringCellValue();
-		}
-		catch(Exception e) {
-			System.out.println("Issue in get read data from excel utility "+e);
+		} catch (Exception e) {
+			System.out.println("Issue in read data from excel sheet "+e);
 		}
 		return value;
 	}
 	
 	public int rowcount() {
 		String path="";
-		int lastrownum=0;
+		int lastrowCount=0;
 		try {
 			FileInputStream fis=new FileInputStream(path);
 			XSSFWorkbook wb=new XSSFWorkbook();
 			XSSFSheet sheet=wb.getSheetAt(0);
-			lastrownum=sheet.getLastRowNum();
+			lastrowCount=sheet.getLastRowNum();
+		} catch (Exception e) {
+			System.out.println("Issue in get last row count "+e);
 		}
-		catch(Exception e) {
-			System.out.println("Issue in get last row count from excel sheet "+e);
-		}
-		return lastrownum;
+		return lastrowCount;
 	}
 }
+
+	
 	
 	
 	
