@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-07T18:22:09 IST" name="Default suite" finished-at="2022-06-07T18:22:17 IST" duration-ms="8751">
+  <suite started-at="2022-07-12T13:28:47 IST" name="Default suite" finished-at="2022-07-12T13:29:19 IST" duration-ms="31995">
     <groups>
     </groups>
-    <test started-at="2022-06-07T18:22:09 IST" name="Default test" finished-at="2022-06-07T18:22:17 IST" duration-ms="8751">
-      <class name="testingbaba_test.Testingbab_Selectmenu_test">
-        <test-method is-config="true" signature="getlaunch()[pri:0, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:09 IST" name="getlaunch" finished-at="2022-06-07T18:22:15 IST" duration-ms="6756" status="PASS">
+    <test started-at="2022-07-12T13:28:47 IST" name="Default test" finished-at="2022-07-12T13:29:19 IST" duration-ms="31995">
+      <class name="testingbaba_test.ClockIN_test">
+        <test-method is-config="true" signature="getlounchurl()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:47 IST" name="getlounchurl" finished-at="2022-07-12T13:28:55 IST" duration-ms="8422" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getlaunch -->
-        <test-method signature="clickonwedgets()[pri:0, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:15 IST" name="clickonwedgets" finished-at="2022-06-07T18:22:16 IST" duration-ms="979" status="PASS">
+        </test-method> <!-- getlounchurl -->
+        <test-method signature="emailId()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="emailId" finished-at="2022-07-12T13:28:56 IST" duration-ms="123" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonwedgets -->
-        <test-method signature="selectvalue()[pri:1, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:16 IST" name="selectvalue" finished-at="2022-06-07T18:22:16 IST" duration-ms="150" status="PASS">
+        </test-method> <!-- emailId -->
+        <test-method signature="enterpassword()[pri:1, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="enterpassword" finished-at="2022-07-12T13:28:56 IST" duration-ms="116" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectvalue -->
-        <test-method signature="getdatafromdropdown()[pri:2, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:16 IST" name="getdatafromdropdown" finished-at="2022-06-07T18:22:17 IST" duration-ms="141" status="PASS">
+        </test-method> <!-- enterpassword -->
+        <test-method signature="clickonsignup()[pri:2, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="clickonsignup" finished-at="2022-07-12T13:28:58 IST" duration-ms="2388" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getdatafromdropdown -->
-        <test-method signature="clickonmultislet()[pri:3, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:17 IST" name="clickonmultislet" finished-at="2022-06-07T18:22:17 IST" duration-ms="250" status="PASS">
+        </test-method> <!-- clickonsignup -->
+        <test-method signature="clickin()[pri:3, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:58 IST" name="clickin" finished-at="2022-07-12T13:28:59 IST" duration-ms="695" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonmultislet -->
-        <test-method signature="selectmultiple()[pri:4, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:17 IST" name="selectmultiple" finished-at="2022-06-07T18:22:17 IST" duration-ms="277" status="PASS">
+        </test-method> <!-- clickin -->
+        <test-method signature="clickout()[pri:4, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:59 IST" name="clickout" finished-at="2022-07-12T13:29:19 IST" duration-ms="20147" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectmultiple -->
-        <test-method signature="getdata()[pri:5, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:17 IST" name="getdata" finished-at="2022-06-07T18:22:17 IST" duration-ms="130" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getdata -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testingbaba_test.Testingbab_Selectmenu_test@156b88f5]" started-at="2022-06-07T18:22:17 IST" name="teardown" finished-at="2022-06-07T18:22:17 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- clickout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:29:19 IST" name="teardown" finished-at="2022-07-12T13:29:19 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- testingbaba_test.Testingbab_Selectmenu_test -->
+      </class> <!-- testingbaba_test.ClockIN_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
