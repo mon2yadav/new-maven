@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-12T13:28:47 IST" name="Default suite" finished-at="2022-07-12T13:29:19 IST" duration-ms="31995">
+  <suite started-at="2022-07-16T17:34:38 IST" name="Default suite" finished-at="2022-07-16T17:34:52 IST" duration-ms="13844">
     <groups>
     </groups>
-    <test started-at="2022-07-12T13:28:47 IST" name="Default test" finished-at="2022-07-12T13:29:19 IST" duration-ms="31995">
-      <class name="testingbaba_test.ClockIN_test">
-        <test-method is-config="true" signature="getlounchurl()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:47 IST" name="getlounchurl" finished-at="2022-07-12T13:28:55 IST" duration-ms="8422" status="PASS">
+    <test started-at="2022-07-16T17:34:38 IST" name="Default test" finished-at="2022-07-16T17:34:52 IST" duration-ms="13844">
+      <class name="testingbaba_test.Github_test">
+        <test-method is-config="true" signature="getlounchurl()[pri:0, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:38 IST" name="getlounchurl" finished-at="2022-07-16T17:34:45 IST" duration-ms="6792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getlounchurl -->
-        <test-method signature="emailId()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="emailId" finished-at="2022-07-12T13:28:56 IST" duration-ms="123" status="PASS">
+        <test-method signature="clickonsignin()[pri:0, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:45 IST" name="clickonsignin" finished-at="2022-07-16T17:34:46 IST" duration-ms="687" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- emailId -->
-        <test-method signature="enterpassword()[pri:1, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="enterpassword" finished-at="2022-07-12T13:28:56 IST" duration-ms="116" status="PASS">
+        </test-method> <!-- clickonsignin -->
+        <test-method signature="fillemailid()[pri:1, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:46 IST" name="fillemailid" finished-at="2022-07-16T17:34:47 IST" duration-ms="1077" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- enterpassword -->
-        <test-method signature="clickonsignup()[pri:2, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:56 IST" name="clickonsignup" finished-at="2022-07-12T13:28:58 IST" duration-ms="2388" status="PASS">
+        </test-method> <!-- fillemailid -->
+        <test-method signature="fillpassword()[pri:2, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:47 IST" name="fillpassword" finished-at="2022-07-16T17:34:47 IST" duration-ms="204" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonsignup -->
-        <test-method signature="clickin()[pri:3, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:58 IST" name="clickin" finished-at="2022-07-12T13:28:59 IST" duration-ms="695" status="PASS">
+        </test-method> <!-- fillpassword -->
+        <test-method signature="clicksignin()[pri:3, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:47 IST" name="clicksignin" finished-at="2022-07-16T17:34:49 IST" duration-ms="1714" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickin -->
-        <test-method signature="clickout()[pri:4, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:28:59 IST" name="clickout" finished-at="2022-07-12T13:29:19 IST" duration-ms="20147" status="PASS">
+        </test-method> <!-- clicksignin -->
+        <test-method signature="clickonsearchfield()[pri:4, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:49 IST" name="clickonsearchfield" finished-at="2022-07-16T17:34:50 IST" duration-ms="1449" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testingbaba_test.ClockIN_test@25084a1e]" started-at="2022-07-12T13:29:19 IST" name="teardown" finished-at="2022-07-12T13:29:19 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- clickonsearchfield -->
+        <test-method signature="selectnewrepsatory()[pri:5, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:50 IST" name="selectnewrepsatory" finished-at="2022-07-16T17:34:50 IST" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectnewrepsatory -->
+        <test-method signature="cliconsignout()[pri:6, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:50 IST" name="cliconsignout" finished-at="2022-07-16T17:34:52 IST" duration-ms="1611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cliconsignout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testingbaba_test.Github_test@3bf9ce3e]" started-at="2022-07-16T17:34:52 IST" name="teardown" finished-at="2022-07-16T17:34:52 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- testingbaba_test.ClockIN_test -->
+      </class> <!-- testingbaba_test.Github_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
